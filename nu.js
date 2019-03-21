@@ -1,9 +1,14 @@
-nu=(name, attribs)=>{
+nu=(name, attribs, append)=>{
 	var node=document.createElement(name)
 
 	for (var attrib in attribs) {
 		node[attrib]=attribs[attrib]
 	}
 
-	return node
+	if (append) {
+		append.appendChild(node)
+	}
+	else {
+		return node
+	}
 }
