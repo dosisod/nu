@@ -26,6 +26,17 @@ nu("element-type", { //type of object to create
 	"property": "value", //properties you want to set
 	"another": "pair"
 }, html) //object to append to (optional)
+
+//here, html can be an html element, string for id
+//if html is an array, nu will chain append:
+
+nu("span", {
+	"innerText": "Hello"
+}, [
+	nu("div", {"id":"container"}), //append span to nu element
+	"tester", //append nu element to document.getElementById("tester")
+	document.body //append "tester" to document.body
+])
 ```
 
 You can even do embedded function:
@@ -33,7 +44,7 @@ You can even do embedded function:
 ```javascript
 nu("span", {
 	"onclick": ()=>alert("clicked!")
-} document.body)
+}, document.body)
 ```
 
 # Installing
