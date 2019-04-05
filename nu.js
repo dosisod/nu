@@ -1,8 +1,10 @@
 nu=(name, attribs, append)=>{
 	var node=document.createElement(name) //make the element we will be modifying
 
-	for (var attrib in attribs) {
-		node[attrib]=attribs[attrib] //set property of node to each passed prop
+	if (attribs) {
+		for (var attrib in attribs) {
+			node[attrib]=attribs[attrib] //set property of node to each passed prop
+		}
 	}
 
 	var f=e=>{ //allows for append chaining

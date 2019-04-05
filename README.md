@@ -37,6 +37,10 @@ nu("span", {
 	"tester", //append nu element to document.getElementById("tester")
 	document.body //append "tester" to document.body
 ])
+
+//To create an empty HTML element, pass only element name
+
+x=nu("span") //makes empty span
 ```
 
 You can even do embedded function:
