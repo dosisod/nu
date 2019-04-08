@@ -27,7 +27,5 @@ nu=(name, attribs, append)=>{
 			f(e)
 		})
 	}
-	else {
-		return node
-	}
+	return node
 }
