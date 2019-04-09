@@ -1,4 +1,4 @@
-nu=(name, attribs, append)=>{
+nu=(name, attribs, append, keep)=>{
 	var node=document.createElement(name) //make the element we will be modifying
 
 	if (attribs) {
@@ -6,6 +6,7 @@ nu=(name, attribs, append)=>{
 			node[attrib]=attribs[attrib] //set property of node to each passed prop
 		}
 	}
+	var old=node
 
 	var f=e=>{ //allows for append chaining
 		var type=e.constructor.name //name of variable type
@@ -27,5 +28,8 @@ nu=(name, attribs, append)=>{
 			f(e)
 		})
 	}
-	return node
+	if (keep) {
+		return old //returns original element (before appending)
+	}
+	return node //returns element after being appended
 }
