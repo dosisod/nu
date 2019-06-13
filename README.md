@@ -1,53 +1,70 @@
 # nu
 Create HTML elements in JS more seamlessly
 
-nu allows for more intuitive creation of HTML elements, increasing readability and decreasing redundancy:
+nu allows for more intuitive creation of HTML elements, increasing readability and decreasing redundancy
+
+## Creating elements with `nu`
+
 
 ```javascript
-//With nu
-
 nu("p", {
 	"innerText": "Hello World"
 }, document.body)
+```
 
-//Without nu
+## Creating elements without `nu`
 
+```javascript
 var node=document.createElement("p")
 node.innerText="Hello World"
 document.body.appendChild(node)
 ```
 
-# Syntax
+## Syntax
 
 Basic syntaxing is as follows:
 
 ```javascript
-nu("element-type", { //type of object to create
+x=nu("element-type", { //type of object to create
 	"property": "value", //properties you want to set
 	"another": "pair"
-}, html) //object to append to (optional)
+}, object, keep)
+```
 
-//here, html can be an html element, string for id
-//if html is an array, nu will chain append:
+`x` now holds the `nu` element
 
+`nu` can also be called anonymously, and elements will still be appended, but not returned
+
+Here, the `object` can be an html element, an id for an element, or another `nu` element
+
+If `object` is an array, `nu` will chain append (recursivley append itself to next item in list):
+
+```javascript
 nu("span", {
 	"innerText": "Hello"
 }, [
 	nu("div", {"id":"container"}), //append span to nu element
 	"tester", //append nu element to document.getElementById("tester")
 	document.body //append "tester" to document.body
-])
-
-//To create an empty HTML element, pass only element name
-
-x=nu("span") //makes empty span
+], true)
 ```
 
-You can even do embedded function:
+`true` is set to return the original element before chain appending (just the `span`)
+
+Setting this to `false` or omitting it entirely will return the element after it has been chain appended
+
+To create an empty html element, pass only the element name
+
+```javascript
+nu("span") //makes empty span
+```
+
+You can even use embedded functions for event listeners:
 
 ```javascript
 nu("span", {
-	"onclick": ()=>alert("clicked!")
+	"innerText": "Hello World",
+	"onclick": (e)=>alert(e.target.innerText)
 }, document.body)
 ```
 
