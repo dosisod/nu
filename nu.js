@@ -1,4 +1,4 @@
-nu=(name, attribs, append, keep)=>{
+function nu(name, attribs, append, keep) {
 	var node=document.createElement(name) //make the element we will be modifying
 
 	if (attribs) {
