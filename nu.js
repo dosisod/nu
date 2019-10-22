@@ -8,7 +8,7 @@ function nu(name, attribs, append, keep) {
 	}
 	var old=node
 
-	var f=e=>{ //allows for append chaining
+	function f(e) { //allows for append chaining
 		var type=e.constructor.name //name of variable type
 		
 		if (type.substring(0, 4)=="HTML") { //if an html object append directly
@@ -18,13 +18,14 @@ function nu(name, attribs, append, keep) {
 			node=document.getElementById(e).appendChild(node).parentNode
 		}
 	}
+	f.bind(this)
 
 	if (append) {
 		var list=[]
 		if (!Array.isArray(append)) list.push(append) //append to list if not a list
 		else list=append //set to list if already a list
 		
-		list.forEach(e=>{ //append element into each other element
+		list.forEach(function(e) { //append element into each other element
 			f(e)
 		})
 	}
