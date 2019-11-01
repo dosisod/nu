@@ -1,4 +1,7 @@
 function nu(name, attribs, append, keep) {
+	if (!attribs) { //by using nu() without params, you will just get an elemnt by id
+		return document.getElementById(name)
+	}
 	var node=document.createElement(name) //make the element we will be modifying
 
 	if (attribs) {
