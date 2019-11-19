@@ -1,7 +1,7 @@
 # nu
 Create HTML elements in JS more seamlessly
 
-nu allows for more intuitive creation of HTML elements, increasing readability and decreasing redundancy
+nu allows for more intuitive creation of HTML elements, increasing readability and decreasing redundancy.
 
 ## Creating elements with `nu`
 
@@ -31,11 +31,11 @@ x=nu("element-type", { //type of object to create
 }, object, keep)
 ```
 
-`x` now holds the `nu` element
+`x` now holds the `nu` element.
 
-`nu` can also be called anonymously, and elements will still be appended, but not returned
+`nu` can also be called anonymously, and elements will still be appended, but not returned.
 
-Here, the `object` can be an html element, an id for an element, or another `nu` element
+Here, the `object` can be an html element, an id for an element, or another `nu` element.
 
 If `object` is an array, `nu` will chain append (recursivley append itself to next item in list):
 
@@ -49,11 +49,11 @@ nu("span", {
 ], true)
 ```
 
-`true` is set to return the original element before chain appending (just the `span`)
+`true` is set to return the original element before chain appending (just the `span`).
 
-Setting this to `false` or omitting it entirely will return the element after it has been chain appended
+Setting this to `false` or omitting it entirely will return the element after it has been chain appended.
 
-To create an empty html element, pass only the element name
+To create an empty html element, pass only the element name.
 
 ```javascript
 nu("span") //makes empty span
@@ -70,6 +70,14 @@ nu("span", {
 
 # Installing
 
-Copy and use either the `nu.js` or `nu.min.js` file as needed
+Copy and use either the `nu.min.js` file as needed.
 
-Make sure to include the `LICENSE` file when copying
+Make sure to include the `LICENSE` file when copying.
+
+# Building
+
+To compile the TypeScript, compile with using provided `tsconfig.json` file:
+
+```
+$ tsc --build tsconfig.json
+```
