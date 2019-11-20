@@ -25,7 +25,7 @@ document.body.appendChild(node)
 Basic syntaxing is as follows:
 
 ```javascript
-x=nu("element-type", { //type of object to create
+var x=nu("element-type", { //type of object to create
 	"property": "value", //properties you want to set
 	"another": "pair"
 }, object, keep)
@@ -35,7 +35,13 @@ x=nu("element-type", { //type of object to create
 
 `nu` can also be called anonymously, and elements will still be appended, but not returned.
 
-Here, the `object` can be an html element, an id for an element, or another `nu` element.
+Here, the `object` can be an html element, an id for an element, or another `nu` element:
+
+```javascript
+nu("span", {"innerText": "Hello World!"}, "id")            //append to element with id "id"
+nu("span", {"innerText": "Hello World!"}, document.body})  //append to body
+nu("span", {"innerText": "Hello World!"}, nu("div", {}))   //append to empty div
+```
 
 If `object` is an array, `nu` will chain append (recursivley append itself to next item in list):
 
@@ -53,10 +59,20 @@ nu("span", {
 
 Setting this to `false` or omitting it entirely will return the element after it has been chain appended.
 
-To create an empty html element, pass only the element name.
+To create a blank HTMLElement, pass `{}` as the second parameter:
 
 ```javascript
-nu("span") //makes empty span
+nu("span", {}) //makes an empty span
+```
+
+When calling `nu` with only one parameter, `document.getElementById` is called instead:
+
+```javascript
+nu("insert-id")
+
+//is equivalent to
+
+document.getElementById("insert-id")
 ```
 
 You can even use embedded functions for event listeners:
@@ -70,7 +86,7 @@ nu("span", {
 
 # Installing
 
-Copy and use either the `nu.min.js` file as needed.
+Copy and use the `nu.min.js` file as needed.
 
 Make sure to include the `LICENSE` file when copying.
 
