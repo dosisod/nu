@@ -1,14 +1,15 @@
 {
   "compilerOptions": {
     "target": "ESNEXT",
-	"lib": ["es5", "dom"],
+    "lib": ["es5", "dom"],
     "module": "commonjs",
     "outDir": "js/",
     "rootDir": "ts/",
 
-	"strictNullChecks": false,
+    "strictNullChecks": false,
     "baseUrl": "./",
     "esModuleInterop": true,
+    "removeComments": true,
 
     "forceConsistentCasingInFileNames": true
   }
