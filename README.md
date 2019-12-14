@@ -88,8 +88,6 @@ nu("span", {
 
 Copy and use the `nu.min.js` file as needed.
 
-Make sure to include the `LICENSE` file when copying.
-
 # Building
 
 To compile the TypeScript, compile with using provided `tsconfig.json` file:
