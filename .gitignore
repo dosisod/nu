@@ -1,4 +1,3 @@
-*.swp
-index.html
 js/nu.js
-.vim
+index.html
+node_modules/

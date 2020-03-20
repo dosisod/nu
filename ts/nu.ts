@@ -4,7 +4,7 @@ type AppendableBase=HTMLElement | string
 
 type Appendable=AppendableBase | AppendableBase[]
 
-function nu(name: string, attribs?: {[attrib: string]: any}, appendTo?: Appendable, returnOld?: boolean): HTMLElement {
+export function nu(name: string, attribs?: {[attrib: string]: any}, appendTo?: Appendable, returnOld?: boolean): HTMLElement {
 	if (!attribs) {
 		return document.getElementById(name)!
 	}

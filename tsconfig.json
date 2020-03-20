@@ -5,6 +5,7 @@
     "module": "commonjs",
     "outDir": "js/",
     "rootDir": "ts/",
+    "declaration": true,
 
     "strictNullChecks": false,
     "baseUrl": "./",

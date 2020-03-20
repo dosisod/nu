@@ -1,0 +1,26 @@
+{
+  "name": "@dosisod/nu-js",
+  "version": "1.0.0",
+  "description": "Create nu HTML easily",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "types": "js/nu.d.ts",
+  "files": [
+    "js/nu.d.ts",
+    "js/nu.min.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dosisod/nu.git"
+  },
+  "author": "dosisod",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dosisod/nu/issues"
+  },
+  "homepage": "https://github.com/dosisod/nu#readme",
+  "devDependencies": {
+    "typescript": "^3.8.3"
+  }
+}
